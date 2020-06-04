@@ -4,11 +4,11 @@ Continues to emit declaration files
 
 ### Actual Behaviour
 
-Stops emitting declaration files if ANY modification is made to a .SCSS (sass) file, declaration directory structure is still there without any declaration, e.g. in a more complex project with multiple directories:
+Stops emitting declaration files if ANY modification is made to a .SCSS (sass) file, declaration directory structure is still there without any declarations.
 
-![Screenshot 2020-06-05 at 06 13 50](https://user-images.githubusercontent.com/760314/83817192-b1994900-a6f6-11ea-8858-6afeff197866.png)
+If an edit is then made to a particular module it generates declarations for those files and it's imports but still missing from the the rest of the project.
 
-If I make a modification to a TS file - for example in `gridHeader` then that file and any imported file emit declarations. Still missing for ones not directly in the dependency path of `gridHeader` so I would for example have to modify `gridHeader` and `columns` to see those.
+Edit: This frequently happens when modifying TS files too, although in that case only some go missing (ones which don't have a direct dependency on the edited file).
 
 ### Steps to Reproduce the Problem
 
@@ -24,3 +24,5 @@ Now make a change to the `.scss` file and note all declaration files except for 
 ### Location of a Minimal Repository that Demonstrates the Issue.
 
 https://github.com/DominicTobias/ts-loader-declaration-bug
+
+**Edit:** This appears to be caused when using clean-webpack-plugin in conjunction with `ts-loader`. So a quick fix is to stop using it.
