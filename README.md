@@ -25,4 +25,4 @@ Now make a change to the `.scss` file and note all declaration files except for 
 
 https://github.com/DominicTobias/ts-loader-declaration-bug
 
-**Edit:** This appears to be caused when using clean-webpack-plugin in conjunction with `ts-loader`. So a quick fix is to stop using it.
+**Edit:** This appears to be caused when using `clean-webpack-plugin` in conjunction with `ts-loader`. So a quick fix is to stop using it.
