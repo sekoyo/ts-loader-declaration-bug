@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "baseUrl": "./src/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "module": "ES6",
+    "target": "ES2019",
+    "jsx": "react",
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*"]
+}
