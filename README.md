@@ -4,9 +4,9 @@ Continues to emit declaration files
 
 ### Actual Behaviour
 
-Stops emitting declaration files if ANY modification is made to a .SCSS (sass) file, declaration directory structure is still there without any declaration:
+Stops emitting declaration files if ANY modification is made to a .SCSS (sass) file, declaration directory structure is still there without any declaration, e.g. in a more complex project with multiple directories:
 
-![Screenshot 2020-06-05 at 06 13 21](https://user-images.githubusercontent.com/760314/83816086-346cd480-a6f4-11ea-8e29-4842f955f70e.png)
+![Screenshot 2020-06-05 at 06 13 50](https://user-images.githubusercontent.com/760314/83817192-b1994900-a6f6-11ea-8858-6afeff197866.png)
 
 If I make a modification to a TS file - for example in `gridHeader` then that file and any imported file emit declarations. Still missing for ones not directly in the dependency path of `gridHeader` so I would for example have to modify `gridHeader` and `columns` to see those.
 
